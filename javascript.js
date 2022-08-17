@@ -15,12 +15,13 @@
 //input the function getComputerChoice in for computerSelection
 
 function getComputerChoice(){
-const arr1 = ["rock", "paper", "scissors"];
-
-const random = Math.floor(Math.random() * arr1.length);
-console.log(random, arr1[random]);
-}
-
+    const arr1 = ["rock", "paper", "scissors"];
+    
+    const random = Math.floor(Math.random() * arr1.length);
+    return random, arr1[random];
+    console.log(random, arr1[random]);
+    }
+    
 function playRound(playerSelection, computerSelection){
     if(playerSelection == "rock" && computerSelection == "paper"){
         return "You Lose! Paper beats Rock"
@@ -50,3 +51,7 @@ function playRound(playerSelection, computerSelection){
         return "Tie! Try again!"
     }
 }
+
+const playerSelection = "rock";
+const computerSelection = getComputerChoice();
+console.log(playRound(playerSelection, computerSelection));
