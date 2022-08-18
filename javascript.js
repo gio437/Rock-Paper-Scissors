@@ -59,6 +59,8 @@ const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
 
+console.log("break");
+
 
 // need to write a function that plays the game five times order and displays the results
 
@@ -72,7 +74,8 @@ console.log(playRound(playerSelection, computerSelection));
 
 function game(){
     for (let i = 0; i < 5; i++){
-        console.log(playRound("paper", getComputerChoice()))
+        console.log(playRound(window.prompt(), getComputerChoice()));
+        console.log("User",window.prompt(), "Computer", getComputerChoice());
     }
     
 }
