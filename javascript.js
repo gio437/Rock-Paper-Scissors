@@ -53,10 +53,12 @@ function playRound(playerSelection, computerSelection){
     }
 }
 
+
 const playerSelection = "rock";
 const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
+
 
 // need to write a function that plays the game five times order and displays the results
 
@@ -68,12 +70,12 @@ console.log(playRound(playerSelection, computerSelection));
 //push to array when i win/lose
 //have two arrays and output the score for winner and loser
 
-
 function game(){
-   
-
-    for (let i = 0; i < 5; i++) {
-     console.log(playRound(i)); 
+    for (let i = 0; i < 5; i++){
+        console.log(playRound("paper", getComputerChoice()))
     }
+    
 }
+
 game();
+
