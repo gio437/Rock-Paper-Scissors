@@ -61,8 +61,9 @@ const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
 
+console.log("<");
 console.log("break to 5x game function");
-
+console.log(">");
 
 // need to write a function that plays the game five times order and displays the results
 
@@ -142,8 +143,19 @@ function counter(){
    console.log("nothing");
    console.log(nothing);
    
-   
-       
+   if (user > computer && user > tie){
+    console.log("Winner!");
+   }
+   else if (computer > user && computer > tie){
+    console.log("Loser!");
+   }
+   else if (tie > user && tie > computer){
+    console.log("It's a tie!");
+   }
+   else if (nothing > user && nothing > computer && nothing > tie){
+    console.log("Retry!")
+    }
+
 }
 
 counter();
