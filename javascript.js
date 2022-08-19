@@ -128,8 +128,9 @@ function counter(){
     tie++;
    }
    else {
-    console.log("undefined");
-     nothing++;
+    console.log(undefined);
+    nothing++;
+    counter();
    }
   
   
@@ -145,7 +146,7 @@ function counter(){
    else if (computer > user && computer >= tie){
     console.log("Loser!");
    }
-   else if (tie > user && tie > computer){
+   else if (tie > user && tie > computer || computer == user){ 
     console.log("It's a tie!");
    }
    else if (nothing > user && nothing > computer && nothing > tie){
