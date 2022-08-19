@@ -130,7 +130,6 @@ function counter(){
    else {
     console.log(undefined);
     nothing++;
-    counter();
    }
   
   
