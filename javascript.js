@@ -134,19 +134,15 @@ function counter(){
   
   
 }
-   console.log("user"); 
-   console.log(user);
-   console.log("tie");
-   console.log(tie);
-   console.log("computer");
-   console.log(computer);
-   console.log("nothing");
-   console.log(nothing);
+   console.log("user", user); 
+   console.log("tie", tie);
+   console.log("computer", computer);;
+   console.log("nothing", nothing);
    
-   if (user > computer && user > tie){
+   if (user > computer && user >= tie){
     console.log("Winner!");
    }
-   else if (computer > user && computer > tie){
+   else if (computer > user && computer >= tie){
     console.log("Loser!");
    }
    else if (tie > user && tie > computer){
