@@ -46,7 +46,7 @@ function playRound(playerSelection, computerSelection){
         return "Tie! Try again!"
     }
         else if(playerSelection == "rock" && computerSelection == "rock"){
-            return "Tie! Try Again"
+            return "Tie! Try again"
     }
         else if(playerSelection == "paper" && computerSelection == "paper"){
             return "Tie! Try again"
@@ -61,7 +61,7 @@ const computerSelection = getComputerChoice();
 console.log(computerSelection);
 console.log(playRound(playerSelection, computerSelection));
 
-console.log("break");
+console.log("break to 5x game function");
 
 
 // need to write a function that plays the game five times order and displays the results
@@ -84,7 +84,7 @@ function game(){
     
 }
 
-
+//game()
 
 
 
@@ -93,6 +93,7 @@ function counter(){
     let user = 0;
     let tie = 0;
     let computer = 0;
+    let nothing = 0;
    
 
     for (let i = 0; i < 5; i++){
@@ -106,6 +107,7 @@ function counter(){
     user++
    }
    else if (outcome === "You Win! Scissors beats Paper"){
+    console.log(outcome);
     user++
    }
    else if (outcome === "You Lose! Rock beats Scissors"){
@@ -124,13 +126,23 @@ function counter(){
     console.log(outcome);
     tie++;
    }
+   else {
+    console.log("undefined");
+     nothing++;
+   }
   
   
 }
+   console.log("user"); 
    console.log(user);
+   console.log("tie");
    console.log(tie);
+   console.log("computer");
    console.log(computer);
-  
+   console.log("nothing");
+   console.log(nothing);
+   
+   
        
 }
 
