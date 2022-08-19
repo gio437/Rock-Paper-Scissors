@@ -24,34 +24,36 @@ function getComputerChoice(){
    
     
 function playRound(playerSelection, computerSelection){
-    if(playerSelection == "rock" && computerSelection == "paper"){
-        return "You Lose! Paper beats Rock"
-    }
-    else if(playerSelection == "rock" && computerSelection == "scissors"){
+     if(playerSelection == "rock" && computerSelection == "scissors"){
         return "You Win! Rock beats Scissors"
-    }
-    else if(playerSelection == "rock" && computerSelection == "rock"){
-        return "Tie! Try Again"
-    }
-    else if(playerSelection == "paper" && computerSelection == "paper"){
-        return "Tie! Try again"
     }
     else if(playerSelection == "paper" && computerSelection == "rock"){
         return "You Win! Paper beats Rock"
-    }
-    else if(playerSelection == "paper" && computerSelection == "scissors"){
-        return "You Lose! Scissors beats Paper"
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
         return "You Win! Scissors beats Paper"
     }
     else if(playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose! Rock beats scissors"
+        return "You Lose! Rock beats Scissors"
+    }
+    if(playerSelection == "rock" && computerSelection == "paper"){
+        return "You Lose! Paper beats Rock"
+    }
+    else if(playerSelection == "paper" && computerSelection == "scissors"){
+        return "You Lose! Scissors beats Paper"
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
         return "Tie! Try again!"
     }
-}
+        else if(playerSelection == "rock" && computerSelection == "rock"){
+            return "Tie! Try Again"
+    }
+        else if(playerSelection == "paper" && computerSelection == "paper"){
+            return "Tie! Try again"
+    }
+   
+    }
+
 
 
 const playerSelection = "rock";
@@ -75,10 +77,62 @@ console.log("break");
 function game(){
     for (let i = 0; i < 5; i++){
         console.log(playRound(window.prompt(), getComputerChoice()));
-        console.log("User",window.prompt(), "Computer", getComputerChoice());
     }
+
+    
+
     
 }
 
-game();
+
+
+
+
+
+function counter(){
+    let user = 0;
+    let tie = 0;
+    let computer = 0;
+   
+
+    for (let i = 0; i < 5; i++){
+    outcome = playRound(window.prompt(), getComputerChoice());
+   if (outcome === "You Win! Rock beats Scissors"){
+    console.log(outcome);
+    user++;
+   }
+   else if (outcome === "You Win! Paper beats Rock"){
+    console.log(outcome);
+    user++
+   }
+   else if (outcome === "You Win! Scissors beats Paper"){
+    user++
+   }
+   else if (outcome === "You Lose! Rock beats Scissors"){
+    console.log(outcome);
+    computer++
+   }
+   else if (outcome === "You Lose! Paper beats Rock"){
+    console.log(outcome);
+    computer++
+   }
+   else if (outcome === "You Lose! Scissors beats Paper"){
+    console.log(outcome);
+    computer++;
+   }
+   else if (outcome === "Tie! Try again"){
+    console.log(outcome);
+    tie++;
+   }
+  
+  
+}
+   console.log(user);
+   console.log(tie);
+   console.log(computer);
+  
+       
+}
+
+counter();
 
