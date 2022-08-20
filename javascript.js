@@ -98,7 +98,15 @@ function counter(){
 
     for (let i = 0; i < 5; i++){
     outcome = playRound(window.prompt(), getComputerChoice());
-   if (outcome === "You Win! Rock beats Scissors"){
+    if (user >= 3){
+        i += 5;
+        console.log("Winner!");
+    }
+    else if (computer >= 3){
+        i += 5;
+        console.log("Loser!");
+    }
+   else if (outcome === "You Win! Rock beats Scissors"){
     console.log(outcome);
     user++;
    }
@@ -131,14 +139,6 @@ function counter(){
     console.log("input again");
     i--;
    }
-    else if (user > computer || user >= 3){
-        i += 5;
-        console.log("Winner!");
-    }
-    else if (computer > user || computer >= 3){
-        i += 5;
-        console.log("Loser!");
-    }
    }
   
   
