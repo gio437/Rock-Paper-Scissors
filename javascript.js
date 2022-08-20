@@ -18,7 +18,7 @@ function getComputerChoice(){
     const arr1 = ["rock", "paper", "scissors"];
     
     const random = Math.floor(Math.random() * arr1.length);
-    return random, arr1[random];
+    return arr1[random];
     }
     
    
@@ -36,14 +36,14 @@ function playRound(playerSelection, computerSelection){
     else if(playerSelection == "scissors" && computerSelection == "rock"){
         return "You Lose! Rock beats Scissors"
     }
-    if(playerSelection == "rock" && computerSelection == "paper"){
+    else if(playerSelection == "rock" && computerSelection == "paper"){
         return "You Lose! Paper beats Rock"
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
         return "You Lose! Scissors beats Paper"
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        return "Tie! Try again!"
+        return "Tie! Try again"
     }
         else if(playerSelection == "rock" && computerSelection == "rock"){
             return "Tie! Try again"
