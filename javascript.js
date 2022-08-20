@@ -94,8 +94,7 @@ function counter(){
     let user = 0;
     let tie = 0;
     let computer = 0;
-    let nothing = 0;
-   
+    
 
     for (let i = 0; i < 5; i++){
     outcome = playRound(window.prompt(), getComputerChoice());
@@ -126,33 +125,38 @@ function counter(){
    else if (outcome === "Tie! Try again"){
     console.log(outcome);
     tie++;
+    i--;
    }
-   else {
-    console.log(undefined);
-    nothing++;
+   else if (outcome === undefined){
+    console.log("input again");
+    i--;
+   }
+    else if (user > computer || user >= 3){
+        i += 5;
+        console.log("Winner!");
+    }
+    else if (computer > user || computer >= 3){
+        i += 5;
+        console.log("Loser!");
+    }
    }
   
   
-}
+
    console.log("user", user); 
    console.log("tie", tie);
    console.log("computer", computer);;
-   console.log("nothing", nothing);
+ 
    
-   if (user > computer && user >= tie){
+   if (user > computer || user >= 3){
     console.log("Winner!");
    }
-   else if (computer > user && computer >= tie){
+   else if (computer > user || computer >= 3){
     console.log("Loser!");
    }
-   else if (tie > user && tie > computer || computer == user){ 
-    console.log("It's a tie!");
-   }
-   else if (nothing > user && nothing > computer && nothing > tie){
-    console.log("Retry!")
-    }
 
 }
+
 
 counter();
 
