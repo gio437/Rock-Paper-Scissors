@@ -56,14 +56,12 @@ function playRound(playerSelection, computerSelection){
 
 
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//const playerSelection = "rock";
+//const computerSelection = getComputerChoice();
+//console.log(computerSelection);
+//console.log(playRound(playerSelection, computerSelection));
 
-console.log("<");
-console.log("break to 5x game function");
-console.log(">");
+
 
 // need to write a function that plays the game five times order and displays the results
 
