@@ -24,39 +24,42 @@ function getComputerChoice(){
    
     
 function playRound(playerSelection, computerSelection){
+
+    
+
      if(playerSelection == "rock" && computerSelection == "scissors"){
-        return "You Win! Rock beats Scissors"
+        return "You Win! Rock beats Scissors";
     }
     else if(playerSelection == "paper" && computerSelection == "rock"){
-        return "You Win! Paper beats Rock"
+        return "You Win! Paper beats Rock";
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
-        return "You Win! Scissors beats Paper"
+        return "You Win! Scissors beats Paper";
     }
     else if(playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose! Rock beats Scissors"
+        return "You Lose! Rock beats Scissors";
     }
     else if(playerSelection == "rock" && computerSelection == "paper"){
-        return "You Lose! Paper beats Rock"
+        return "You Lose! Paper beats Rock";
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
-        return "You Lose! Scissors beats Paper"
+        return "You Lose! Scissors beats Paper";
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        return "Tie! Try again"
+        return "Tie! Try again";
     }
         else if(playerSelection == "rock" && computerSelection == "rock"){
-            return "Tie! Try again"
+            return "Tie! Try again";
     }
         else if(playerSelection == "paper" && computerSelection == "paper"){
-            return "Tie! Try again"
+            return "Tie! Try again";
     }
    
     }
 
 
 
-//const playerSelection = "rock";
+const playerSelection = document.getElementById("rock").addEventListener("click");
 //const computerSelection = getComputerChoice();
 //console.log(computerSelection);
 //console.log(playRound(playerSelection, computerSelection));
@@ -73,17 +76,6 @@ function playRound(playerSelection, computerSelection){
 //push to array when i win/lose
 //have two arrays and output the score for winner and loser
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        console.log(playRound(window.prompt(), getComputerChoice()));
-    }
-
-    
-
-    
-}
-
-//game()
 
 
 
@@ -95,7 +87,7 @@ function counter(){
     
 
     for (let i = 0; i < 5; ++i){
-    outcome = playRound(window.prompt(), getComputerChoice());
+    outcome = playRound(playerSelection, getComputerChoice());
     if (outcome === "You Win! Rock beats Scissors"){
     console.log(outcome);
     user++;
@@ -130,17 +122,15 @@ function counter(){
     i--;
    }
     if (user >= 3){
-    i += 5;
-    console.log("Winner!");
+    break;
 }
     else if (computer >= 3){
-    i += 5;
-    console.log("Loser!");
+    break;
    }
 }
   
 
-   console.log("user", user); 
+   console.log("user", user);  //may have to move up to get the numbers diplay in dom
    console.log("tie", tie);
    console.log("computer", computer);;
  
