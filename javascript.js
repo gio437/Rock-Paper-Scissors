@@ -56,14 +56,12 @@ function playRound(playerSelection, computerSelection){
 
 
 
-const playerSelection = "rock";
-const computerSelection = getComputerChoice();
-console.log(computerSelection);
-console.log(playRound(playerSelection, computerSelection));
+//const playerSelection = "rock";
+//const computerSelection = getComputerChoice();
+//console.log(computerSelection);
+//console.log(playRound(playerSelection, computerSelection));
 
-console.log("<");
-console.log("break to 5x game function");
-console.log(">");
+
 
 // need to write a function that plays the game five times order and displays the results
 
@@ -75,17 +73,7 @@ console.log(">");
 //push to array when i win/lose
 //have two arrays and output the score for winner and loser
 
-function game(){
-    for (let i = 0; i < 5; i++){
-        console.log(playRound(window.prompt(), getComputerChoice()));
-    }
 
-    
-
-    
-}
-
-//game()
 
 
 
@@ -132,12 +120,12 @@ function counter(){
     i--;
    }
     if (user >= 3){
-    i += 5;
     console.log("Winner!");
+    break;
 }
     else if (computer >= 3){
-    i += 5;
     console.log("Loser!");
+    break;
    }
 }
   
