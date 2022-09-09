@@ -74,6 +74,15 @@ function playRound(playerSelection, computerSelection){
 //have two arrays and output the score for winner and loser
 
 
+function changePar() {
+    return playerSelection = "rock";
+}
+    
+let play = document.getElementById("rock");
+console.log(play)
+play.addEventListener("click", counter);
+
+
 
 
 
@@ -84,8 +93,9 @@ function counter(){
     let computer = 0;
     
 
-    for (let i = 0; i < 5; ++i){
-    outcome = playRound(window.prompt(), getComputerChoice());
+    //for (let i = 0; i < 5; ++i){
+        playerSelection = changePar();
+    outcome = playRound(playerSelection, getComputerChoice());
     if (outcome === "You Win! Rock beats Scissors"){
     console.log(outcome);
     user++;
@@ -121,13 +131,13 @@ function counter(){
    }
     if (user >= 3){
     console.log("Winner!");
-    break;
+    //break;
 }
     else if (computer >= 3){
     console.log("Loser!");
-    break;
+    //break;ter
    }
-}
+
   
 
    console.log("user", user); 
@@ -145,5 +155,5 @@ function counter(){
 }
 
 
-counter();
+//counter();
 
