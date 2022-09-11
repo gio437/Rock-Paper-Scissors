@@ -73,13 +73,21 @@ function playRound(playerSelection, computerSelection){
 //push to array when i win/lose
 //have two arrays and output the score for winner and loser
 
+//rps-ui =>
+
+// get players choice -function
+// get computers choice -function
+// compare the choices -function
+// update score, pass result of compare -function
+// check gamer over -function
+// if not, nextRound -function
+// if gamer over, nextGame -function
 
 function changePar() {
-    return playerSelection = "rock";
+    return playerSelection = "rock"; 
 }
     
 let play = document.getElementById("rock");
-console.log(play)
 play.addEventListener("click", counter);
 
 
@@ -130,14 +138,12 @@ function counter(){
     i--;
    }
     if (user >= 3){
-    console.log("Winner!");
     //break;
 }
     else if (computer >= 3){
-    console.log("Loser!");
-    //break;ter
+    //break;
    }
-
+    //}
   
 
    console.log("user", user); 
