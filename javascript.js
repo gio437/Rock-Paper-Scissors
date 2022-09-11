@@ -28,17 +28,16 @@ function getComputerChoice() {
     
     
     //top comment for button functions
-    function changePaper() {
+    function changePaper() {    //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
         playerSelection = "paper"; 
-        playRound();
+        playRound("paper", getComputerChoice());
     }
         
     let paper = document.getElementById("paper");
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
-        playerSelection = "scissors"; 
-        playRound();
+        playRound("scissors", getComputerChoice());
     }
 
     let scissors = document.getElementById("scissors");
@@ -46,15 +45,14 @@ function getComputerChoice() {
     
 
     function changeRock() {
-    playerSelection = "rock";
-    playRound();
+    playRound("rock", getComputerChoice());
   }
 
    let rock = document.getElementById("rock");
    rock.addEventListener("click", changeRock);
    //bottom comment for button functions
     
-   
+ 
 
 function playRound(playerSelection, computerSelection) {
    
@@ -103,7 +101,7 @@ function playRound(playerSelection, computerSelection) {
 
 
 //const playerSelection = "rock";
-const computerSelection = getComputerChoice();
+//const computerSelection = getComputerChoice();
 //console.log(computerSelection);
 //console.log(playRound(playerSelection, computerSelection));
 
