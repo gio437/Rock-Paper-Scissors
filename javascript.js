@@ -28,8 +28,14 @@ function getComputerChoice() {
     
     
     //top comment for button functions
-    function changePaper() {    //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
-        playerSelection = "paper"; 
+    function changeRock() {
+        playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
+      }
+    
+    let rock = document.getElementById("rock");
+    rock.addEventListener("click", changeRock);
+    
+    function changePaper() {   
         playRound("paper", getComputerChoice());
     }
         
@@ -42,14 +48,6 @@ function getComputerChoice() {
 
     let scissors = document.getElementById("scissors");
     scissors.addEventListener("click", changeScissors);
-    
-
-    function changeRock() {
-    playRound("rock", getComputerChoice());
-  }
-
-   let rock = document.getElementById("rock");
-   rock.addEventListener("click", changeRock);
    //bottom comment for button functions
     
  
@@ -62,6 +60,7 @@ function playRound(playerSelection, computerSelection) {
      if(playerSelection == "rock" && computerSelection == "scissors"){
         user++;
         checkGame();
+        counter();
     }
     else if(playerSelection == "paper" && computerSelection == "rock"){
         user++;
@@ -98,7 +97,12 @@ function playRound(playerSelection, computerSelection) {
  
     }
 
+    function counter() {
+        let player = document.querySelector(".user");
+        player.textContent = user;
+    }
 
+   
 
 //const playerSelection = "rock";
 //const computerSelection = getComputerChoice();
@@ -126,8 +130,6 @@ function playRound(playerSelection, computerSelection) {
 // check game over -function
 // if not, nextRound -function
 // if gamer over, nextGame -function
-
-
 
 
  
