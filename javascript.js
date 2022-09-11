@@ -14,50 +14,96 @@
 // return the winner
 //input the function getComputerChoice in for computerSelection
 
-function getComputerChoice(){
+let user = 0;
+let tie = 0;
+let computer = 0;
+
+
+function getComputerChoice() {
     const arr1 = ["rock", "paper", "scissors"];
     
     const random = Math.floor(Math.random() * arr1.length);
     return arr1[random];
     }
     
-   
     
-function playRound(playerSelection, computerSelection){
+    //top comment for button functions
+    function changePaper() {
+        playerSelection = "paper"; 
+        playRound();
+    }
+        
+    let paper = document.getElementById("paper");
+    paper.addEventListener("click", changePaper);
+    
+    function changeScissors() {
+        playerSelection = "scissors"; 
+        playRound();
+    }
+
+    let scissors = document.getElementById("scissors");
+    scissors.addEventListener("click", changeScissors);
+    
+
+    function changeRock() {
+    playerSelection = "rock";
+    playRound();
+  }
+
+   let rock = document.getElementById("rock");
+   rock.addEventListener("click", changeRock);
+   //bottom comment for button functions
+    
+   
+
+function playRound(playerSelection, computerSelection) {
+   
+    console.log(playerSelection);
+    console.log(computerSelection);
+
      if(playerSelection == "rock" && computerSelection == "scissors"){
-        return "You Win! Rock beats Scissors"
+        user++;
+        checkGame();
     }
     else if(playerSelection == "paper" && computerSelection == "rock"){
-        return "You Win! Paper beats Rock"
+        user++;
+        checkGame();
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
-        return "You Win! Scissors beats Paper"
+        user++;
+        checkGame();
     }
     else if(playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose! Rock beats Scissors"
+        computer++;
+        checkGame();
     }
     else if(playerSelection == "rock" && computerSelection == "paper"){
-        return "You Lose! Paper beats Rock"
+        computer++;
+        checkGame();
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
-        return "You Lose! Scissors beats Paper"
+        computer++;
+        checkGame();
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        return "Tie! Try again"
+        tie++;
     }
-        else if(playerSelection == "rock" && computerSelection == "rock"){
-            return "Tie! Try again"
+    else if(playerSelection == "rock" && computerSelection == "rock"){
+        tie++;
     }
-        else if(playerSelection == "paper" && computerSelection == "paper"){
-            return "Tie! Try again"
+    else if(playerSelection == "paper" && computerSelection == "paper"){
+        tie++;
     }
-   
+    console.log("user", user); 
+    console.log("tie", tie);
+    console.log("computer", computer);
+ 
     }
 
 
 
 //const playerSelection = "rock";
-//const computerSelection = getComputerChoice();
+const computerSelection = getComputerChoice();
 //console.log(computerSelection);
 //console.log(playRound(playerSelection, computerSelection));
 
@@ -78,88 +124,31 @@ function playRound(playerSelection, computerSelection){
 // get players choice -function
 // get computers choice -function
 // compare the choices -function
-// update score, pass result of compare -function
-// check gamer over -function
+// update score, aka pass result of compare -function
+// check game over -function
 // if not, nextRound -function
 // if gamer over, nextGame -function
 
-function changePar() {
-    return playerSelection = "rock"; 
-}
-    
-let play = document.getElementById("rock");
-play.addEventListener("click", counter);
 
 
 
-
-
-
-function counter(){
-    let user = 0;
-    let tie = 0;
-    let computer = 0;
-    
-
-    //for (let i = 0; i < 5; ++i){
-        playerSelection = changePar();
-    outcome = playRound(playerSelection, getComputerChoice());
-    if (outcome === "You Win! Rock beats Scissors"){
-    console.log(outcome);
-    user++;
-   }
-   else if (outcome === "You Win! Paper beats Rock"){
-    console.log(outcome);
-    user++
-   }
-   else if (outcome === "You Win! Scissors beats Paper"){
-    console.log(outcome);
-    user++
-   }
-   else if (outcome === "You Lose! Rock beats Scissors"){
-    console.log(outcome);
-    computer++
-   }
-   else if (outcome === "You Lose! Paper beats Rock"){
-    console.log(outcome);
-    computer++
-   }
-   else if (outcome === "You Lose! Scissors beats Paper"){
-    console.log(outcome);
-    computer++;
-   }
-   else if (outcome === "Tie! Try again"){
-    console.log(outcome);
-    tie++;
-    i--;
-   }
-   else if (outcome === undefined){
-    console.log("input again");
-    i--;
-   }
-    if (user >= 3){
-    //break;
-}
-    else if (computer >= 3){
-    //break;
-   }
-    //}
-  
-
-   console.log("user", user); 
-   console.log("tie", tie);
-   console.log("computer", computer);;
  
-   
-   if (user > computer || user >= 3){
-    console.log("Winner!");
-   }
-   else if (computer > user || computer >= 3){
-    console.log("Loser!");
-   }
-
+function checkGame() {
+    if (user >= 3){
+       console.log("Winner!");
+       resetGame();
+    }
+    else if (computer >= 3){
+        console.log("Loser!");
+        resetGame();
+    }
 }
 
 
-//counter();
+function resetGame() {
+    user = 0;
+    tie = 0;
+    computer = 0;
+}
+
 
