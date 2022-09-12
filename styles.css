@@ -28,8 +28,8 @@ body {
 
 .main {
     display: flex;
-    justify-content: space-around;
+    text-align: center;
     align-self: flex-start;
-    gap: 100px;
+    gap: 0px;
 }
 

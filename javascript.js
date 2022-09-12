@@ -60,49 +60,65 @@ function playRound(playerSelection, computerSelection) {
      if(playerSelection == "rock" && computerSelection == "scissors"){
         user++;
         checkGame();
-        counter();
+        playerCounter(); //this adds users score on DOM
     }
     else if(playerSelection == "paper" && computerSelection == "rock"){
         user++;
         checkGame();
+        playerCounter();
     }
     else if(playerSelection == "scissors" && computerSelection == "paper"){
         user++;
         checkGame();
+        playerCounter();
     }
     else if(playerSelection == "scissors" && computerSelection == "rock"){
         computer++;
         checkGame();
+        computerCounter();
     }
     else if(playerSelection == "rock" && computerSelection == "paper"){
         computer++;
         checkGame();
+        computerCounter();
     }
     else if(playerSelection == "paper" && computerSelection == "scissors"){
         computer++;
         checkGame();
+        computerCounter();
     }
     else if(playerSelection == "scissors" && computerSelection == "scissors"){
         tie++;
+        tieCounter();
     }
     else if(playerSelection == "rock" && computerSelection == "rock"){
         tie++;
+        tieCounter();
     }
     else if(playerSelection == "paper" && computerSelection == "paper"){
         tie++;
+        tieCounter();
     }
     console.log("user", user); 
-    console.log("tie", tie);
+    console.log("tie", tie); //maybe change these to dom?
     console.log("computer", computer);
  
     }
 
-    function counter() {
+    function playerCounter() {
         let player = document.querySelector(".user");
         player.textContent = user;
     }
 
-   
+   function computerCounter() {
+        let cpu = document.querySelector(".computer");
+        cpu.textContent = computer;
+   }
+
+   function tieCounter() {
+        let same = document.querySelector(".tie");
+        same.textContent = tie;
+   }
 
 //const playerSelection = "rock";
 //const computerSelection = getComputerChoice();
