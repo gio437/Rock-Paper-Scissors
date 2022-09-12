@@ -154,7 +154,8 @@ function playRound(playerSelection, computerSelection) {
 // if gamer over, nextGame -function
 
 function resultWin() {
-let result1 = document.querySelector(".result")
+  
+    let result1 = document.querySelector(".result")
 
     let win = document.createElement("div");
     win.classList.add("win");
@@ -185,6 +186,15 @@ function checkGame() {
         tie = 0;
         computer = 0;
         resultWin();
+
+        let player = document.querySelector(".user");
+        player.textContent = user;
+
+        let cpu = document.querySelector(".computer");
+        cpu.textContent = computer;
+
+        let same = document.querySelector(".tie");
+        same.textContent = tie;
     }
 
     else if (computer >= 3){
@@ -192,6 +202,15 @@ function checkGame() {
         tie = 0;
         computer = 0;
         resultLose();
+
+        let player = document.querySelector(".user");
+        player.textContent = user;
+
+        let cpu = document.querySelector(".computer");
+        cpu.textContent = computer;
+
+        let same = document.querySelector(".tie");
+        same.textContent = tie;
     }
 }
 
