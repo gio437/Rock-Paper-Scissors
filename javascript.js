@@ -100,22 +100,27 @@ function playRound(playerSelection, computerSelection) {
         tieCounter();
     }
     console.log("user", user); 
-    console.log("tie", tie); //maybe change these to dom?
+    console.log("tie", tie); //maybe change these to dom? MAYBE CREATE ELEMENT?
     console.log("computer", computer);
  
     }
 
+    
+
     function playerCounter() {
+    
         let player = document.querySelector(".user");
         player.textContent = user;
     }
 
    function computerCounter() {
+        
         let cpu = document.querySelector(".computer");
         cpu.textContent = computer;
    }
 
    function tieCounter() {
+       
         let same = document.querySelector(".tie");
         same.textContent = tie;
    }
@@ -147,24 +152,49 @@ function playRound(playerSelection, computerSelection) {
 // if not, nextRound -function
 // if gamer over, nextGame -function
 
+function resultWin() {
+let result1 = document.querySelector(".result")
+
+    let win = document.createElement("div");
+    win.classList.add("win")
+    win.textContent = "You Win!";
+    }
 
  
+function resultLose() {
+    let result2 = document.querySelector(".result")
+
+    let lose = document.createElement("div");
+    lose.classList.add("lose")
+    lose.textContent = "Loser!";
+
+    result2.appendChild(lose);
+}
+
 function checkGame() {
     if (user >= 3){
-       console.log("Winner!");
-       resetGame();
+        user = 0;
+        tie = 0;
+        computer = 0;
+        resultWin();
+
+        let player = document.querySelector(".user");
+        player.textContent = user;
+
+        let cpu = document.querySelector(".computer");
+        cpu.textContent = computer;
+
+        let tie = document.querySelector(".tie");
+        tie.textContent = tie;
     }
+
     else if (computer >= 3){
-        console.log("Loser!");
-        resetGame();
+        user = 0;
+        tie = 0;
+        computer = 0;
+        resultLose();
     }
 }
 
-
-function resetGame() {
-    user = 0;
-    tie = 0;
-    computer = 0;
-}
 
 
