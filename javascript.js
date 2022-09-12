@@ -111,6 +111,7 @@ function playRound(playerSelection, computerSelection) {
     
         let player = document.querySelector(".user");
         player.textContent = user;
+
     }
 
    function computerCounter() {
@@ -156,36 +157,34 @@ function resultWin() {
 let result1 = document.querySelector(".result")
 
     let win = document.createElement("div");
-    win.classList.add("win")
+    win.classList.add("win");
     win.textContent = "You Win!";
+
+    result1.appendChild(win);
+
+    console.log("You Win!");
     }
 
  
 function resultLose() {
-    let result2 = document.querySelector(".result")
+    let result2 = document.querySelector(".result");
 
     let lose = document.createElement("div");
-    lose.classList.add("lose")
+    lose.classList.add("lose");
     lose.textContent = "Loser!";
 
     result2.appendChild(lose);
+
+    console.log("Loser!");
 }
 
 function checkGame() {
+
     if (user >= 3){
         user = 0;
         tie = 0;
         computer = 0;
         resultWin();
-
-        let player = document.querySelector(".user");
-        player.textContent = user;
-
-        let cpu = document.querySelector(".computer");
-        cpu.textContent = computer;
-
-        let tie = document.querySelector(".tie");
-        tie.textContent = tie;
     }
 
     else if (computer >= 3){
@@ -195,6 +194,5 @@ function checkGame() {
         resultLose();
     }
 }
-
 
 
