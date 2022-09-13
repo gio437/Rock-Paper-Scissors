@@ -18,6 +18,8 @@ let user = 0;
 let tie = 0;
 let computer = 0;
 
+let end = 0;
+
 
 function getComputerChoice() {
     const arr1 = ["rock", "paper", "scissors"];
@@ -29,13 +31,19 @@ function getComputerChoice() {
     
     //top comment for button functions
     function changeRock() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
     
     let rock = document.getElementById("rock");
     rock.addEventListener("click", changeRock);
     
-    function changePaper() {   
+    function changePaper() { 
+        if (end == 1){
+            resetCounter();
+        }  
         playRound("paper", getComputerChoice());
     }
         
@@ -43,6 +51,9 @@ function getComputerChoice() {
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("scissors", getComputerChoice());
     }
 
@@ -158,12 +169,14 @@ function resultWin() {
     let result1 = document.querySelector(".result")
 
     let win = document.createElement("div");
-    win.classList.add("win");
+    win.classList.add("end");
     win.textContent = "You Win!";
 
     result1.appendChild(win);
 
     console.log("You Win!");
+
+    end++;
     }
 
  
@@ -171,12 +184,14 @@ function resultLose() {
     let result2 = document.querySelector(".result");
 
     let lose = document.createElement("div");
-    lose.classList.add("lose");
+    lose.classList.add("end");
     lose.textContent = "Loser!";
 
     result2.appendChild(lose);
 
     console.log("Loser!");
+
+    end++;
 }
 
 function checkGame() {
@@ -215,3 +230,10 @@ function checkGame() {
 }
 
 
+  function resetCounter() {
+    end--;
+
+    let result1 = document.querySelector(".end");
+    result1.remove();
+
+}

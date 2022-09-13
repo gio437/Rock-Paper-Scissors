@@ -64,7 +64,7 @@ button {
     justify-content: center;
 }
 
-.win {
+.end {
     margin-top: 40px;
     color: black;
     text-align: center;
@@ -73,10 +73,3 @@ button {
     transition: 10s;
 }
 
-.lose {
-    margin-top: 40px;
-    color: black;
-    text-align: center;
-    padding: 10px;
-    font-size: 30px;
-}
