@@ -71,7 +71,7 @@ function getComputerChoice() {
     let result1 = document.querySelector(".tracker")
 
     let win = document.createElement("div");
-    win.classList.add("end");
+    win.classList.add("hey");
     win.textContent = "Computer Threw Rock!";
 
     result1.appendChild(win);
@@ -81,7 +81,7 @@ function getComputerChoice() {
         let result1 = document.querySelector(".tracker")
     
         let win = document.createElement("div");
-        win.classList.add("end");
+        win.classList.add("hey");
         win.textContent = "Computer Threw Paper!";
     
         result1.appendChild(win);
@@ -91,7 +91,7 @@ function getComputerChoice() {
             let result1 = document.querySelector(".tracker")
         
             let win = document.createElement("div");
-            win.classList.add("end");
+            win.classList.add("hey");
             win.textContent = "Computer Threw Scissors!";
         
             result1.appendChild(win);
@@ -261,7 +261,7 @@ function checkGame() {
         tie = 0;        //MAYBE IMPLEMENT RESETGAME BUTTON?! Remove CSS elements
         computer = 0;
 
-        let hi = document.querySelector(".end");
+        let hi = document.querySelector(".hey");
         hi.remove();
         
 
