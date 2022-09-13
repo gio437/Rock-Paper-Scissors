@@ -245,7 +245,7 @@ function checkGame() {
     else if (computer == 3){
         resultLose();
 
-
+        
         
 
          //for reset button
@@ -261,7 +261,9 @@ function checkGame() {
         tie = 0;        //MAYBE IMPLEMENT RESETGAME BUTTON?! Remove CSS elements
         computer = 0;
 
-    
+        let hi = document.querySelector(".end");
+        hi.remove();
+        
 
         let player = document.querySelector(".user");
         player.textContent = user;                          //updates dom numbers
@@ -271,6 +273,8 @@ function checkGame() {
 
         let same = document.querySelector(".tie");
         same.textContent = tie;
+
+        
     }
 
 
