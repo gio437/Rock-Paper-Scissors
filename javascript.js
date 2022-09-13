@@ -79,7 +79,7 @@ function getComputerChoice() {
     }
     else if(computerSelection == "paper") {
         let result1 = document.querySelector(".tracker")
-    
+        
         let win = document.createElement("div");
         win.classList.add("hey");
         win.textContent = "Computer Threw Paper!";
@@ -235,6 +235,7 @@ function checkGame() {
 
     if (user == 3){
         resultWin();
+        
 
 
         //for reset button
@@ -244,7 +245,7 @@ function checkGame() {
 
     else if (computer == 3){
         resultLose();
-
+     
         
         
 
@@ -263,7 +264,9 @@ function checkGame() {
 
         let hi = document.querySelector(".hey");
         hi.remove();
-        
+
+        let yo = document.querySelector(".end");
+        yo.remove();
 
         let player = document.querySelector(".user");
         player.textContent = user;                          //updates dom numbers
