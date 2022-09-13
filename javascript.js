@@ -35,6 +35,7 @@ function getComputerChoice() {
             resetCounter();
         }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
+        showThrows(getComputerChoice()); 
       }
     
     let rock = document.getElementById("rock");
@@ -45,6 +46,7 @@ function getComputerChoice() {
             resetCounter();
         }  
         playRound("paper", getComputerChoice());
+        showThrows(getComputerChoice());
     }
         
     let paper = document.getElementById("paper");
@@ -55,11 +57,46 @@ function getComputerChoice() {
             resetCounter();
         }
         playRound("scissors", getComputerChoice());
+        showThrows(getComputerChoice());
     }
 
     let scissors = document.getElementById("scissors");
     scissors.addEventListener("click", changeScissors);
    //bottom comment for button functions
+
+
+   function showThrows(computerSelection) {
+
+    if(computerSelection == "rock") {
+    let result1 = document.querySelector(".tracker")
+
+    let win = document.createElement("div");
+    win.classList.add("end");
+    win.textContent = "Computer Threw Rock!";
+
+    result1.appendChild(win);
+
+    }
+    else if(computerSelection == "paper") {
+        let result1 = document.querySelector(".tracker")
+    
+        let win = document.createElement("div");
+        win.classList.add("end");
+        win.textContent = "Computer Threw Paper!";
+    
+        result1.appendChild(win);
+    }
+
+     else  if(computerSelection == "scissors") {
+            let result1 = document.querySelector(".tracker")
+        
+            let win = document.createElement("div");
+            win.classList.add("end");
+            win.textContent = "Computer Threw Scissors!";
+        
+            result1.appendChild(win);
+    }
+   }
     
  
 
@@ -200,17 +237,6 @@ function checkGame() {
         resultWin();
 
 
-        let rock = document.getElementById("rock")
-        rock.remove();
-
-        let paper = document.getElementById("paper")
-        paper.remove();
-
-        let scissors = document.getElementById("scissors")
-        scissors.remove();
-
-
-
         //for reset button
         let reset = document.getElementById("start");
         reset.addEventListener("click", resetGame);
@@ -220,14 +246,7 @@ function checkGame() {
         resultLose();
 
 
-        let rock = document.getElementById("rock")
-        rock.remove();
-
-        let paper = document.getElementById("paper")
-        paper.remove();
-
-        let scissors = document.getElementById("scissors")
-        scissors.remove();
+        
 
          //for reset button
          let reset = document.getElementById("start");
@@ -242,13 +261,7 @@ function checkGame() {
         tie = 0;        //MAYBE IMPLEMENT RESETGAME BUTTON?! Remove CSS elements
         computer = 0;
 
-     let replay = document.querySelector(".selections");
-
-     let button = document.createElement("button");
-        button.setAttribute("id", "rock");
-        
-
-        replay.appendChild(button);
+    
 
         let player = document.querySelector(".user");
         player.textContent = user;                          //updates dom numbers
