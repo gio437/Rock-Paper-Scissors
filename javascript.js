@@ -196,30 +196,62 @@ function resultLose() {
 
 function checkGame() {
 
-    if (user >= 3){
-        user = 0;
-        tie = 0;
-        computer = 0;
+    if (user == 3){
         resultWin();
 
-        let player = document.querySelector(".user");
-        player.textContent = user;
 
-        let cpu = document.querySelector(".computer");
-        cpu.textContent = computer;
+        let rock = document.getElementById("rock")
+        rock.remove();
 
-        let same = document.querySelector(".tie");
-        same.textContent = tie;
+        let paper = document.getElementById("paper")
+        paper.remove();
+
+        let scissors = document.getElementById("scissors")
+        scissors.remove();
+
+
+
+        //for reset button
+        let reset = document.getElementById("start");
+        reset.addEventListener("click", resetGame);
     }
 
-    else if (computer >= 3){
-        user = 0;
-        tie = 0;
-        computer = 0;
+    else if (computer == 3){
         resultLose();
 
+
+        let rock = document.getElementById("rock")
+        rock.remove();
+
+        let paper = document.getElementById("paper")
+        paper.remove();
+
+        let scissors = document.getElementById("scissors")
+        scissors.remove();
+
+         //for reset button
+         let reset = document.getElementById("start");
+         reset.addEventListener("click", resetGame);
+    }
+
+    }
+
+
+    function resetGame(){
+        user = 0;
+        tie = 0;        //MAYBE IMPLEMENT RESETGAME BUTTON?! Remove CSS elements
+        computer = 0;
+
+     let replay = document.querySelector(".selections");
+
+     let button = document.createElement("button");
+        button.setAttribute("id", "rock");
+        
+
+        replay.appendChild(button);
+
         let player = document.querySelector(".user");
-        player.textContent = user;
+        player.textContent = user;                          //updates dom numbers
 
         let cpu = document.querySelector(".computer");
         cpu.textContent = computer;
@@ -227,7 +259,7 @@ function checkGame() {
         let same = document.querySelector(".tie");
         same.textContent = tie;
     }
-}
+
 
 
   function resetCounter() {

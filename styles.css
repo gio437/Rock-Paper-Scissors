@@ -70,6 +70,22 @@ button {
     text-align: center;
     padding: 10px;
     font-size: 30px;
-    transition: 10s;
+    
+}
+
+.start {
+   
+    margin-top: 40px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+  
+}
+
+.reset {
+    display: flex;
+    justify-content: center;
+    
 }
 
