@@ -18,6 +18,8 @@ let user = 0;
 let tie = 0;
 let computer = 0;
 
+let end = 0;
+
 
 function getComputerChoice() {
     const arr1 = ["rock", "paper", "scissors"];
@@ -27,48 +29,21 @@ function getComputerChoice() {
     }
     
     
-
-function playRound(playerSelection, computerSelection){
-
-    
-
-     if(playerSelection == "rock" && computerSelection == "scissors"){
-        return "You Win! Rock beats Scissors";
-    }
-    else if(playerSelection == "paper" && computerSelection == "rock"){
-        return "You Win! Paper beats Rock";
-    }
-    else if(playerSelection == "scissors" && computerSelection == "paper"){
-        return "You Win! Scissors beats Paper";
-    }
-    else if(playerSelection == "scissors" && computerSelection == "rock"){
-        return "You Lose! Rock beats Scissors";
-    }
-    else if(playerSelection == "rock" && computerSelection == "paper"){
-        return "You Lose! Paper beats Rock";
-    }
-    else if(playerSelection == "paper" && computerSelection == "scissors"){
-        return "You Lose! Scissors beats Paper";
-    }
-    else if(playerSelection == "scissors" && computerSelection == "scissors"){
-        return "Tie! Try again";
-    }
-        else if(playerSelection == "rock" && computerSelection == "rock"){
-            return "Tie! Try again";
-    }
-        else if(playerSelection == "paper" && computerSelection == "paper"){
-            return "Tie! Try again";
-        }
-    }
     //top comment for button functions
     function changeRock() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
     
     let rock = document.getElementById("rock");
     rock.addEventListener("click", changeRock);
     
-    function changePaper() {   
+    function changePaper() { 
+        if (end == 1){
+            resetCounter();
+        }  
         playRound("paper", getComputerChoice());
     }
         
@@ -76,6 +51,9 @@ function playRound(playerSelection, computerSelection){
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("scissors", getComputerChoice());
     }
 
@@ -131,7 +109,6 @@ function playRound(playerSelection, computerSelection) {
     else if(playerSelection == "paper" && computerSelection == "paper"){
         tie++;
         tieCounter();
-
     }
     console.log("user", user); 
     console.log("tie", tie); //maybe change these to dom? MAYBE CREATE ELEMENT?
@@ -166,13 +143,6 @@ function playRound(playerSelection, computerSelection) {
 //console.log(playRound(playerSelection, computerSelection));
 
 
-const playerSelection = document.getElementById("rock").addEventListener("click");
-//const computerSelection = getComputerChoice();
-//console.log(computerSelection);
-//console.log(playRound(playerSelection, computerSelection));
-
-
-
 
 // need to write a function that plays the game five times order and displays the results
 
@@ -183,7 +153,6 @@ const playerSelection = document.getElementById("rock").addEventListener("click"
 //write to keep score
 //push to array when i win/lose
 //have two arrays and output the score for winner and loser
-
 
 //rps-ui =>
 
@@ -200,12 +169,14 @@ function resultWin() {
     let result1 = document.querySelector(".result")
 
     let win = document.createElement("div");
-    win.classList.add("win");
+    win.classList.add("end");
     win.textContent = "You Win!";
 
     result1.appendChild(win);
 
     console.log("You Win!");
+
+    end++;
     }
 
  
@@ -213,16 +184,17 @@ function resultLose() {
     let result2 = document.querySelector(".result");
 
     let lose = document.createElement("div");
-    lose.classList.add("lose");
+    lose.classList.add("end");
     lose.textContent = "Loser!";
 
     result2.appendChild(lose);
 
     console.log("Loser!");
+
+    end++;
 }
 
 function checkGame() {
-
 
     if (user >= 3){
         user = 0;
@@ -240,63 +212,6 @@ function checkGame() {
         same.textContent = tie;
     }
 
-
-    for (let i = 0; i < 5; ++i){
-    outcome = playRound(playerSelection, getComputerChoice());
-    if (outcome === "You Win! Rock beats Scissors"){
-    console.log(outcome);
-    user++;
-   }
-   else if (outcome === "You Win! Paper beats Rock"){
-    console.log(outcome);
-    user++
-   }
-   else if (outcome === "You Win! Scissors beats Paper"){
-    console.log(outcome);
-    user++
-   }
-   else if (outcome === "You Lose! Rock beats Scissors"){
-    console.log(outcome);
-    computer++
-   }
-   else if (outcome === "You Lose! Paper beats Rock"){
-    console.log(outcome);
-    computer++
-   }
-   else if (outcome === "You Lose! Scissors beats Paper"){
-    console.log(outcome);
-    computer++;
-   }
-   else if (outcome === "Tie! Try again"){
-    console.log(outcome);
-    tie++;
-    i--;
-   }
-   else if (outcome === undefined){
-    console.log("input again");
-    i--;
-   }
-    if (user >= 3){
-    break;
-}
-    else if (computer >= 3){
-    break;
-   }
-}
-  
-
-   console.log("user", user);  //may have to move up to get the numbers diplay in dom
-   console.log("tie", tie);
-   console.log("computer", computer);;
- 
-   
-   if (user > computer || user >= 3){
-    console.log("Winner!");
-   }
-   else if (computer > user || computer >= 3){
-    console.log("Loser!");
-   }
-
     else if (computer >= 3){
         user = 0;
         tie = 0;
@@ -305,7 +220,6 @@ function checkGame() {
 
         let player = document.querySelector(".user");
         player.textContent = user;
-
 
         let cpu = document.querySelector(".computer");
         cpu.textContent = computer;
@@ -316,3 +230,10 @@ function checkGame() {
 }
 
 
+  function resetCounter() {
+    end--;
+
+    let result1 = document.querySelector(".end");
+    result1.remove();
+
+}
