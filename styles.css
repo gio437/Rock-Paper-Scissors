@@ -1,0 +1,75 @@
+
+button {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.main {
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    padding: 40px;
+    
+}
+
+.first {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    margin: 30px;
+    margin-right: 50px;
+}
+
+.user {
+    background-color: black;
+    color: white;
+    text-align: center;
+    
+}
+
+.second {
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.tie {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.three{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    font-size: 30px;
+    margin: 30px;
+}
+
+.computer {
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+.selections {
+    display: flex;
+    justify-content: center;
+}
+
+.end {
+    margin-top: 40px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    transition: 10s;
+}
+
