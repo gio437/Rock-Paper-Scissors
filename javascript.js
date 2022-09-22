@@ -31,9 +31,6 @@ function getComputerChoice() {
     
     //top comment for button functions
     function changeRock() {
-        if (end == 1){
-            resetCounter();
-        }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
     
@@ -41,9 +38,6 @@ function getComputerChoice() {
     rock.addEventListener("click", changeRock);
     
     function changePaper() { 
-        if (end == 1){
-            resetCounter();
-        }  
         playRound("paper", getComputerChoice());
     }
         
@@ -51,9 +45,6 @@ function getComputerChoice() {
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
-        if (end == 1){
-            resetCounter();
-        }
         playRound("scissors", getComputerChoice());
     }
 
@@ -229,11 +220,3 @@ function checkGame() {
     }
 }
 
-
-  function resetCounter() {
-    end--;
-
-    let result1 = document.querySelector(".end");
-    result1.remove();
-
-}
