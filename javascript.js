@@ -18,7 +18,6 @@ let user = 0;
 let tie = 0;
 let computer = 0;
 
-let end = 0;
 
 
 function getComputerChoice() {
@@ -31,73 +30,27 @@ function getComputerChoice() {
     
     //top comment for button functions
     function changeRock() {
-        if (end == 1){
-            resetCounter();
-        }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
-        showThrows(getComputerChoice()); 
       }
     
     let rock = document.getElementById("rock");
     rock.addEventListener("click", changeRock);
     
     function changePaper() { 
-        if (end == 1){
-            resetCounter();
-        }  
         playRound("paper", getComputerChoice());
-        showThrows(getComputerChoice());
     }
         
     let paper = document.getElementById("paper");
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
-        if (end == 1){
-            resetCounter();
-        }
         playRound("scissors", getComputerChoice());
-        showThrows(getComputerChoice());
     }
 
     let scissors = document.getElementById("scissors");
     scissors.addEventListener("click", changeScissors);
    //bottom comment for button functions
 
-
-   function showThrows(computerSelection) {
-
-    if(computerSelection == "rock") {
-    let result1 = document.querySelector(".tracker")
-
-    let win = document.createElement("div");
-    win.classList.add("hey");
-    win.textContent = "Computer Threw Rock!";
-
-    result1.appendChild(win);
-
-    }
-    else if(computerSelection == "paper") {
-        let result1 = document.querySelector(".tracker")
-        
-        let win = document.createElement("div");
-        win.classList.add("hey");
-        win.textContent = "Computer Threw Paper!";
-    
-        result1.appendChild(win);
-    }
-
-     else  if(computerSelection == "scissors") {
-            let result1 = document.querySelector(".tracker")
-        
-            let win = document.createElement("div");
-            win.classList.add("hey");
-            win.textContent = "Computer Threw Scissors!";
-        
-            result1.appendChild(win);
-    }
-   }
-    
  
 
 function playRound(playerSelection, computerSelection) {
@@ -213,7 +166,6 @@ function resultWin() {
 
     console.log("You Win!");
 
-    end++;
     }
 
  
@@ -228,7 +180,6 @@ function resultLose() {
 
     console.log("Loser!");
 
-    end++;
 }
 
 function checkGame() {
@@ -281,11 +232,3 @@ function checkGame() {
     }
 
 
-
-  function resetCounter() {
-    end--;
-
-    let result1 = document.querySelector(".end");
-    result1.remove();
-
-}
