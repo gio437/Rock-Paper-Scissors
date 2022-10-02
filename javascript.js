@@ -18,6 +18,7 @@ let user = 0;
 let tie = 0;
 let computer = 0;
 
+let end = 0;
 
 
 function getComputerChoice() {
@@ -30,6 +31,9 @@ function getComputerChoice() {
     
     //top comment for button functions
     function changeRock() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
     
@@ -37,6 +41,9 @@ function getComputerChoice() {
     rock.addEventListener("click", changeRock);
     
     function changePaper() { 
+        if (end == 1){
+            resetCounter();
+        }  
         playRound("paper", getComputerChoice());
     }
         
@@ -44,13 +51,16 @@ function getComputerChoice() {
     paper.addEventListener("click", changePaper);
     
     function changeScissors() {
+        if (end == 1){
+            resetCounter();
+        }
         playRound("scissors", getComputerChoice());
     }
 
     let scissors = document.getElementById("scissors");
     scissors.addEventListener("click", changeScissors);
    //bottom comment for button functions
-
+    
  
 
 function playRound(playerSelection, computerSelection) {
@@ -166,6 +176,7 @@ function resultWin() {
 
     console.log("You Win!");
 
+    end++;
     }
 
  
@@ -180,55 +191,49 @@ function resultLose() {
 
     console.log("Loser!");
 
+    end++;
 }
 
 function checkGame() {
 
-    if (user == 3){
-        resultWin();
-        
-
-
-        //for reset button
-        let reset = document.getElementById("start");
-        reset.addEventListener("click", resetGame);
-    }
-
-    else if (computer == 3){
-        resultLose();
-     
-        
-        
-
-         //for reset button
-         let reset = document.getElementById("start");
-         reset.addEventListener("click", resetGame);
-    }
-
-    }
-
-
-    function resetGame(){
+    if (user >= 3){
         user = 0;
-        tie = 0;        //MAYBE IMPLEMENT RESETGAME BUTTON?! Remove CSS elements
+        tie = 0;
         computer = 0;
-
-        let hi = document.querySelector(".hey");
-        hi.remove();
-
-        let yo = document.querySelector(".end");
-        yo.remove();
+        resultWin();
 
         let player = document.querySelector(".user");
-        player.textContent = user;                          //updates dom numbers
+        player.textContent = user;
 
         let cpu = document.querySelector(".computer");
         cpu.textContent = computer;
 
         let same = document.querySelector(".tie");
         same.textContent = tie;
-
-        
     }
 
+    else if (computer >= 3){
+        user = 0;
+        tie = 0;
+        computer = 0;
+        resultLose();
 
+        let player = document.querySelector(".user");
+        player.textContent = user;
+
+        let cpu = document.querySelector(".computer");
+        cpu.textContent = computer;
+
+        let same = document.querySelector(".tie");
+        same.textContent = tie;
+    }
+}
+
+
+  function resetCounter() {
+    end--;
+
+    let result1 = document.querySelector(".end");
+    result1.remove();
+
+}
