@@ -73,3 +73,7 @@ button {
     transition: 10s;
 }
 
+.reset {
+    display: flex;
+    justify-content: center;
+}

@@ -31,8 +31,8 @@ function getComputerChoice() {
     
     //top comment for button functions
     function changeRock() {
-        if (end == 1){
-            resetCounter();
+        if (end == 1) {
+            return;
         }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
@@ -41,8 +41,8 @@ function getComputerChoice() {
     rock.addEventListener("click", changeRock);
     
     function changePaper() { 
-        if (end == 1){
-            resetCounter();
+        if (end == 1) {
+            return;
         }  
         playRound("paper", getComputerChoice());
     }
@@ -52,7 +52,7 @@ function getComputerChoice() {
     
     function changeScissors() {
         if (end == 1){
-            resetCounter();
+            return;
         }
         playRound("scissors", getComputerChoice());
     }
@@ -176,7 +176,19 @@ function resultWin() {
 
     console.log("You Win!");
 
-    end++;
+    let reset = document.querySelector(".reset");
+
+    let threw = document.createElement("button");
+    threw.classList.add("reset-button");
+
+    reset.appendChild(threw);
+
+    threw.textContent = "Reset";
+
+    let redo = document.querySelector(".reset-button");
+    redo.addEventListener("click", resetButton);
+
+    end = 1;
     }
 
  
@@ -191,49 +203,58 @@ function resultLose() {
 
     console.log("Loser!");
 
-    end++;
+    let reset = document.querySelector(".reset");
+    let threw = document.createElement("button");
+    threw.classList.add("reset-button");
+
+    reset.appendChild(threw);
+
+    threw.textContent = "Reset";
+
+    let redo = document.querySelector(".reset-button");
+    redo.addEventListener("click", resetButton);
+
+    end = 1;
 }
 
 function checkGame() {
 
     if (user >= 3){
-        user = 0;
-        tie = 0;
-        computer = 0;
         resultWin();
-
-        let player = document.querySelector(".user");
-        player.textContent = user;
-
-        let cpu = document.querySelector(".computer");
-        cpu.textContent = computer;
-
-        let same = document.querySelector(".tie");
-        same.textContent = tie;
     }
 
     else if (computer >= 3){
-        user = 0;
-        tie = 0;
-        computer = 0;
         resultLose();
-
-        let player = document.querySelector(".user");
-        player.textContent = user;
-
-        let cpu = document.querySelector(".computer");
-        cpu.textContent = computer;
-
-        let same = document.querySelector(".tie");
-        same.textContent = tie;
     }
 }
 
 
-  function resetCounter() {
-    end--;
 
-    let result1 = document.querySelector(".end");
-    result1.remove();
 
+
+function resetButton() {
+    user = 0;
+    tie = 0;
+    computer = 0;
+
+    let result1 = document.querySelectorAll(".end");
+    for (let i = 0; i < result1.length; i++) {
+    result1[i].remove();
+    }
+
+    let reset = document.querySelectorAll(".reset-button");
+    for (let i = 0; i < reset.length; i++) {
+    reset[i].remove();
+    }
+
+    let player = document.querySelector(".user");
+    player.textContent = user;
+
+    let cpu = document.querySelector(".computer");
+    cpu.textContent = computer;
+
+    let same = document.querySelector(".tie");
+    same.textContent = tie;
+
+    end = 0;
 }
