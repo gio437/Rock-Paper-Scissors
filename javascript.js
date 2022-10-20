@@ -20,13 +20,40 @@ let computer = 0;
 
 let end = 0;
 
+let change = 0;
 
 function getComputerChoice() {
+
     const arr1 = ["rock", "paper", "scissors"];
     
     const random = Math.floor(Math.random() * arr1.length);
-    return arr1[random];
+
+    let arr = arr1[random];
+
+    let cpu = document.querySelector(".result");
+
+    let result = document.createElement("div");
+
+    if (change == 0) {
+        let result1 = document.querySelectorAll(".cpu-threw");
+
+        for (let i = 0; i < result1.length; i++) {
+        result1[i].remove();
+        }
+
+        result.classList.add("cpu-threw");
+        result.textContent = "Computer threw " + arr + "!";
+
+        cpu.appendChild(result);
+
+        change = 1;
     }
+    if (change == 1) {
+        change = 0;
+    }
+
+    return arr;
+}
     
     
     //top comment for button functions
@@ -230,8 +257,6 @@ function checkGame() {
 
 
 
-
-
 function resetButton() {
     user = 0;
     tie = 0;
@@ -241,6 +266,11 @@ function resetButton() {
     for (let i = 0; i < result1.length; i++) {
     result1[i].remove();
     }
+
+    let result2 = document.querySelectorAll(".cpu-threw");
+    for (let i = 0; i < result2.length; i++) {
+    result2[i].remove(); // for computer throw reset
+     }
 
     let reset = document.querySelectorAll(".reset-button");
     for (let i = 0; i < reset.length; i++) {

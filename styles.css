@@ -77,3 +77,14 @@ button {
     display: flex;
     justify-content: center;
 }
+
+.cpu-threw {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    color: black;
+    text-align: center;
+    padding: 10px;
+    font-size: 30px;
+    transition: 10s;
+}
