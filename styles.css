@@ -65,11 +65,11 @@ button {
 }
 
 .end {
-    margin-top: 40px;
+    margin-top: 30px;
     color: black;
     text-align: center;
     padding: 10px;
-    font-size: 30px;
+    font-size: 50px;
     transition: 10s;
 }
 
@@ -85,6 +85,6 @@ button {
     color: black;
     text-align: center;
     padding: 10px;
-    font-size: 30px;
+    font-size: 20px;
     transition: 10s;
 }
