@@ -17,35 +17,24 @@
 let user = 0;
 let tie = 0;
 let computer = 0;
-
 let end = 0;
-
 let change = 0;
 
 function getComputerChoice() {
-
     const arr1 = ["rock", "paper", "scissors"];
-    
     const random = Math.floor(Math.random() * arr1.length);
-
     let arr = arr1[random];
-
     let cpu = document.querySelector(".result");
-
     let result = document.createElement("div");
 
     if (change == 0) {
         let result1 = document.querySelectorAll(".cpu-threw");
-
         for (let i = 0; i < result1.length; i++) {
         result1[i].remove();
         }
-
         result.classList.add("cpu-threw");
         result.textContent = "Computer threw " + arr + "!";
-
         cpu.appendChild(result);
-
         change = 1;
     }
     if (change == 1) {
@@ -54,8 +43,8 @@ function getComputerChoice() {
 
     return arr;
 }
-    
-    
+
+
     //top comment for button functions
     function changeRock() {
         if (end == 1) {
@@ -63,20 +52,20 @@ function getComputerChoice() {
         }
         playRound("rock", getComputerChoice()); //PASS THE PARAMETERS INTO THE FUNCTION GENUIS!!!
       }
-    
+
     let rock = document.getElementById("rock");
     rock.addEventListener("click", changeRock);
-    
-    function changePaper() { 
+
+    function changePaper() {
         if (end == 1) {
             return;
-        }  
+        }
         playRound("paper", getComputerChoice());
     }
-        
+
     let paper = document.getElementById("paper");
     paper.addEventListener("click", changePaper);
-    
+
     function changeScissors() {
         if (end == 1){
             return;
@@ -87,11 +76,11 @@ function getComputerChoice() {
     let scissors = document.getElementById("scissors");
     scissors.addEventListener("click", changeScissors);
    //bottom comment for button functions
-    
- 
+
+
 
 function playRound(playerSelection, computerSelection) {
-   
+
     console.log(playerSelection);
     console.log(computerSelection);
 
@@ -137,29 +126,26 @@ function playRound(playerSelection, computerSelection) {
         tie++;
         tieCounter();
     }
-    console.log("user", user); 
+    console.log("user", user);
     console.log("tie", tie); //maybe change these to dom? MAYBE CREATE ELEMENT?
     console.log("computer", computer);
- 
+
     }
 
-    
+
 
     function playerCounter() {
-    
         let player = document.querySelector(".user");
         player.textContent = user;
 
     }
 
    function computerCounter() {
-        
         let cpu = document.querySelector(".computer");
         cpu.textContent = computer;
    }
 
    function tieCounter() {
-       
         let same = document.querySelector(".tie");
         same.textContent = tie;
    }
@@ -192,60 +178,41 @@ function playRound(playerSelection, computerSelection) {
 // if gamer over, nextGame -function
 
 function resultWin() {
-  
     let result1 = document.querySelector(".result")
-
     let win = document.createElement("div");
     win.classList.add("end");
     win.textContent = "You Win!";
-
     result1.appendChild(win);
-
     console.log("You Win!");
-
     let reset = document.querySelector(".reset");
-
     let threw = document.createElement("button");
     threw.classList.add("reset-button");
-
     reset.appendChild(threw);
-
     threw.textContent = "Reset";
-
     let redo = document.querySelector(".reset-button");
     redo.addEventListener("click", resetButton);
-
     end = 1;
     }
 
- 
+
 function resultLose() {
     let result2 = document.querySelector(".result");
-
     let lose = document.createElement("div");
     lose.classList.add("end");
     lose.textContent = "Loser!";
-
     result2.appendChild(lose);
-
     console.log("Loser!");
-
     let reset = document.querySelector(".reset");
     let threw = document.createElement("button");
     threw.classList.add("reset-button");
-
     reset.appendChild(threw);
-
     threw.textContent = "Reset";
-
     let redo = document.querySelector(".reset-button");
     redo.addEventListener("click", resetButton);
-
     end = 1;
 }
 
 function checkGame() {
-
     if (user >= 3){
         resultWin();
     }
